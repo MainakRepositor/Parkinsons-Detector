@@ -1,5 +1,5 @@
 seaborn==0.11.1
-streamlit==0.89.0
+streamlit==1.11.1
 numpy==1.19.5
 matplotlib==3.4.2
 pandas==1.3.4
