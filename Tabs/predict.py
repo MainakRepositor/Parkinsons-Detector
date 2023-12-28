@@ -97,11 +97,13 @@ spread1,spread2,PPE - Three nonlinear measures of fundamental frequency variatio
         # Print the output according to the prediction
         if (prediction == 1):
             st.error("The person either has Parkison's disease or prone to get Parkinson's disease")
-            if (ppe > 0.13 or d2 > 2.0):
+            if (ppe > 0.13 and ppe< 0.25 or d2 > 2.0 and d2 <3.0):
                 st.warning("There is a risk of Early-onset of Parkinson\'s Disease")
-            elif (ppe > 0.26):
+            elif (ppe > 0.26 and ppe < 0.36 or d2 > 3.0):
                 st.warning("There is a risk of Idiopathic Parkinson\'s Disease. There is also a risk of Schizophrenia")
-            elif (ppe > 0.37):
+            elif (ppe > 0.37 and avff > 200):
+                st.warning("There is a risk of Nervous mis-coordination and hard grip. Please ask the patient to practice gripping exercises")
+            elif (ppe > 0.42 and mavff > 350):
                 st.warning("There is a risk of Acute Parkinson\'s Disease")
             elif ((mdvpshim + shimdda + shimapq3 + shimapq5) > 0.20 and d2 > 2):
                 st.warning("There is a risk of slight tremor in fingers")
